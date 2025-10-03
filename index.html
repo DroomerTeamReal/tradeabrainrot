@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Steal Abra Traders</title>
+  <title>Steal A Bra Traders</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <div class="sidebar">
-    <h2>Steal Abra</h2>
+    <h2>Steal A Bra</h2>
     <ul>
+      <li><button onclick="showSection('register')">Create Account</button></li>
       <li><button onclick="showSection('traders')">Traders</button></li>
       <li><button onclick="showSection('accounts')">Accounts</button></li>
       <li><button onclick="showSection('settings')">Settings</button></li>
@@ -17,31 +18,45 @@
   </div>
 
   <div class="content">
+    <!-- Register form -->
     <section id="register">
       <h2>Create Account</h2>
       <form id="registerForm">
         <input type="email" id="email" placeholder="Email" required />
         <input type="text" id="username" placeholder="Username" required />
         <input type="password" id="password" placeholder="Password" required />
-        <button type="submit">Register</button>
+        <button type="submit">Create Account</button>
       </form>
       <div id="registerMessage"></div>
     </section>
 
+    <!-- Traders list -->
     <section id="traders" style="display:none;">
       <h2>Traders</h2>
       <ul id="tradersList"></ul>
     </section>
 
+    <!-- Accounts list -->
     <section id="accounts" style="display:none;">
       <h2>Accounts</h2>
       <ul id="accountsList"></ul>
     </section>
 
+    <!-- Settings -->
     <section id="settings" style="display:none;">
       <h2>Settings</h2>
       <p>Coming soon...</p>
     </section>
+  </div>
+
+  <!-- Message modal (hidden until triggered) -->
+  <div id="messageModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3 id="messageTitle">Send message</h3>
+      <textarea id="messageText" rows="5" cols="40"></textarea><br>
+      <button onclick="sendMessage()">Send</button>
+      <button onclick="closeMessageModal()">Cancel</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
