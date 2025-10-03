@@ -1,66 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Steal A Bra — Traders</title>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steal Abra Traders</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<div id="app">
-<aside class="sidebar">
-<h2>Steal A Bra</h2>
-<nav>
-<button data-view="traders" class="active">Traders</button>
-<button data-view="accounts">Accounts</button>
-<button data-view="settings">Settings</button>
-</nav>
-</aside>
+  <div class="sidebar">
+    <h2>Steal Abra</h2>
+    <ul>
+      <li><button onclick="showSection('traders')">Traders</button></li>
+      <li><button onclick="showSection('accounts')">Accounts</button></li>
+      <li><button onclick="showSection('settings')">Settings</button></li>
+    </ul>
+  </div>
 
+  <div class="content">
+    <section id="register">
+      <h2>Create Account</h2>
+      <form id="registerForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
+      <div id="registerMessage"></div>
+    </section>
 
-<main class="main">
-<section id="view-traders" class="view">
-<div class="top">
-<form id="register-form">
-<input id="email" type="email" placeholder="Email" required />
-<input id="displayName" type="text" placeholder="Display name" required />
-<input id="password" type="password" placeholder="Password" required />
-<button type="submit">Create Account</button>
-</form>
-</div>
+    <section id="traders" style="display:none;">
+      <h2>Traders</h2>
+      <ul id="tradersList"></ul>
+    </section>
 
+    <section id="accounts" style="display:none;">
+      <h2>Accounts</h2>
+      <ul id="accountsList"></ul>
+    </section>
 
-<div id="traders-list" class="list"></div>
-</section>
+    <section id="settings" style="display:none;">
+      <h2>Settings</h2>
+      <p>Coming soon...</p>
+    </section>
+  </div>
 
-
-<section id="view-accounts" class="view hidden">
-<h3>Your created accounts (demo)</h3>
-<div id="accounts-list"></div>
-</section>
-
-
-<section id="view-settings" class="view hidden">
-<h3>Settings</h3>
-<p>Demo settings — add real options here.</p>
-</section>
-</main>
-</div>
-
-
-<!-- Simple modal for messaging -->
-<div id="msg-modal" class="modal hidden">
-<div class="modal-card">
-<h4>Send message to <span id="msg-target"></span></h4>
-<textarea id="msg-body" rows="6"></textarea>
-<div class="modal-actions">
-<button id="msg-send">Send</button>
-<button id="msg-cancel">Cancel</button>
-</div>
-</div>
-</div>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
