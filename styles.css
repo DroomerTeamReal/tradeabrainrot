@@ -1,0 +1,22 @@
+*{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body,html{height:100%;margin:0}
+#app{display:flex;min-height:100vh}
+.sidebar{width:220px;background:#111;color:#fff;padding:18px}
+.sidebar h2{margin:0 0 18px}
+.sidebar nav button{display:block;width:100%;padding:10px;border:none;background:transparent;color:#ddd;text-align:left;margin-bottom:6px;border-radius:6px;cursor:pointer}
+.sidebar nav button.active{background:#222;color:#fff}
+.main{flex:1;padding:18px;background:linear-gradient(#f7f7f7,#fff)}
+.top{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+#register-form input{padding:8px;border-radius:6px;border:1px solid #ccc}
+#register-form button{padding:8px 12px;border-radius:6px;border:none;background:#0b74ff;color:#fff;cursor:pointer}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.trader{background:#fff;border:1px solid #e4e4e4;padding:12px;border-radius:8px}
+.trader h4{margin:0 0 8px}
+.trader .meta{font-size:13px;color:#666;margin-bottom:8px}
+.trader .actions button{margin-right:8px;padding:6px 8px;border-radius:6px;border:none;cursor:pointer}
+.trader .actions .block{background:#ff4d4f;color:#fff}
+.trader .actions .message{background:#0b74ff;color:#fff}
+.hidden{display:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center}
+.modal-card{background:#fff;padding:16px;border-radius:8px;width:560px;max-width:90%}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
